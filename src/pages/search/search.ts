@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Jsonp, URLSearchParams } from "@angular/http";
+import {Jsonp, URLSearchParams, Http} from "@angular/http";
 import { ResultsPage } from "../results/results";
 
 import 'rxjs/add/operator/map';
@@ -15,9 +15,11 @@ import 'rxjs/add/operator/map';
 export class SearchPage {
 
   apiKey: string = 'MDpiYjk1NjkwYy1mZDQ5LTExZTYtOWM2ZS00N2ZiOTMxOTY5MzI6NWRNYldhdmJrTExmRW1JVkwyN2VnTDlvQm80WnlMZjhBOEYz'
-  site : string = 'https://lcboapi.com/products';
+
+  // TODO: Remeber to change the port number as necessary.
+  site : string = 'http://localhost:8100/api';
   product : string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams, private jsonp: Jsonp) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private jsonp: Jsonp, private http: Http) {
 
   }
 
@@ -31,9 +33,10 @@ export class SearchPage {
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
     console.log(params.toString());
-    this.jsonp.get(siteSearch, { search : params }).map(res => res.json())
+    this.http.get(siteSearch, { search : params }).map(res => res.json())
     .subscribe(
       reply => {
+        console.log(reply);
         this.navCtrl.push(ResultsPage, reply)
       },
       error => console.warn("Error: ", error)
