@@ -31,20 +31,13 @@ export class SearchPage {
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
     console.log(params.toString());
-    this.jsonp.get(siteSearch, { search : params}).map(res=> {
-      console.log(res);
-    })
-
-    /*
-    this.jsonp.get(this.queryString)
-      .map(res => res.json())
-      .subscribe(
-        reply => {
-          this.navCtrl.push(ResultsPage, reply)
-        },
-        error => console.warn("Error: ", error)
-      )
-      */
+    this.jsonp.get(siteSearch, { search : params }).map(res => res.json())
+    .subscribe(
+      reply => {
+        this.navCtrl.push(ResultsPage, reply)
+      },
+      error => console.warn("Error: ", error)
+    )
   }
 
 }
