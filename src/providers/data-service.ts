@@ -22,33 +22,25 @@ export class DataService {
   }
 
   init() {
+    /*
+    apiKey: "AIzaSyAWHO3zT_Sjxm16CV99VvNdfNiB-SfwZ14",
+    authDomain: "cloudassign1.firebaseapp.com",
+    databaseURL: "https://cloudassign1.firebaseio.com",
+    storageBucket: "cloudassign1.appspot.com",
+    messagingSenderId: "54996453160"
+    */
     const firebaseConfig  = {
-      apiKey : "AIzaSyC0TQ79z-ZWvE8pwWi04bQ4Pl5oJv3JFbs",
-      authDomain: "cloudassign2-285d7.firebaseapp.com",
-      databaseURL: "https://cloudassign2-285d7.firebaseio.com",
-      storageBucket: "cloudassign2-285d7.appspot.com",
-      messagingSenderId: "604482624287"
+      apiKey : "AIzaSyAWHO3zT_Sjxm16CV99VvNdfNiB-SfwZ14",
+      authDomain: "cloudassign1.firebaseapp.com",
+      databaseURL: "https://cloudassign1.firebaseio.com",
+      storageBucket: "cloudassign1.appspot.com",
+      messagingSenderId: "54996453160"
     };
 
-    firebase.initializeApp(firebaseConfig); 
+    firebase.initializeApp(firebaseConfig);
     this.db = firebase.database();
     this.auth = firebase.auth();
     this.users = this.db.ref('users');
     this.ref = this.db.ref();
   }
 }
-/*
-
-<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: ,
-    authDomain: "cloudassign2-285d7.firebaseapp.com",
-    databaseURL: "https://cloudassign2-285d7.firebaseio.com",
-    storageBucket: "cloudassign2-285d7.appspot.com",
-    messagingSenderId: "604482624287"
-  };
-  firebase.initializeApp(config);
-</script>
-*/

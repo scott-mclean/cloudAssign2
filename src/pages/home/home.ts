@@ -1,6 +1,6 @@
-import {Component, NgZone} from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 
-import {NavController, ModalController, AlertController} from 'ionic-angular';
+import { NavController, ModalController, AlertController } from 'ionic-angular';
 import { LoginPage } from "../login/login";
 import { DataService } from "../../providers/data-service";
 import { ProductPage } from "../product/product";
@@ -58,9 +58,9 @@ export class HomePage {
     });
   }
 
-  logout(){
+  AccountLogout(){
     let confirm = this.alertCtrl.create({
-      title: 'Confirm Delete',
+      title: 'Confirm Logout',
       message: 'Are you sure you want to log out?',
       buttons: [
         {
