@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button solid color="default" (click)="AccountLogout()">Logout</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome, {{name}}</h2>
+  <p>
+    This is your home screen where you can see all your favourited LCBO products.
+  </p>
+  <ion-list>
+    Products you have saved:
+  </ion-list>
+  <ion-list [hidden]="productList === undefined">
+    <button ion-item menuClose *ngFor="let key of keys" (click)="viewProductList(productList[key])"><span style="font-style: italic; font-weight: bold">{{productList[key].product}}</span>
+      <span [hidden]="!productList[key].products">by</span> <span *ngFor="let product of productList[key].product; let last = last">{{product}}{{last ? '' : ', '}}</span></button>
+  </ion-list>
