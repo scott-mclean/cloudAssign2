@@ -8,7 +8,18 @@
 
   <ion-navbar>
     <ion-title>Results</ion-title>
-    <ion-buttons end><button ion-button><span><ion-icon name="arrow-dropright"></ion-icon></span></button></ion-buttons>
+    <ion-buttons end>
+      <button ion-button>
+        <span>
+          <ion-icon name="arrow-dropleft" (click)="decreasePage()"></ion-icon>
+          </span>
+        </button>
+        <button ion-button>
+          <span>
+            <ion-icon name="arrow-dropright" (click)="increasePage()"></ion-icon>
+          </span>
+        </button>
+</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +27,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item menuClose *ngFor="let result of searchResults" (click)="viewProductInfo(result)"><span style="font-style: italic; font-weight: bold">{{result}}</span></button>
+    <button ion-item menuClose *ngFor="let result of searchResults.result" (click)="viewProductInfo(result)"><span style="font-style: italic; font-weight: bold">{{result}}</span></button>
   </ion-list>
 
 </ion-content>
