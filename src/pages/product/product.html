@@ -15,22 +15,20 @@
 
 <ion-content padding>
   <div text-center="">
-    <img [src]="productObject.imageLinks.thumbnail">
+    <ion-img src={{productObject.image_url}}></ion-img>
   </div><br>
   <ion-title text-center="">{{[productObject].name}}</ion-title>
+  <!--
   <ion-item><span style="font-weight: bold">Author(s):</span> <span *ngFor="let author of bookObj.authors; let last = last">{{author}}{{last ? '' : ', '}}</span></ion-item>
   <ion-item><span style="font-weight: bold">Publisher: </span>{{bookObj.publisher}}</ion-item>
   <ion-item><span style="font-weight: bold">Publication Date: </span>{{bookObj.publishedDate}}</ion-item>
   <ion-item text-wrap><span style="font-weight: bold">Synopsis: </span>{{bookObj.description}}</ion-item>
   <ion-item><span style="font-weight: bold">ISBN-13: </span>{{bookObj.industryIdentifiers[0].identifier}}</ion-item>
   <ion-item><span style="font-weight: bold">ISBN-10: </span>{{bookObj.industryIdentifiers[1].identifier}}</ion-item>
+-->
   <ion-item>
-    <a ion-button outline color="primary" block [href]="bookObj.infoLink" target="_blank"><span><ion-icon name="play"></ion-icon></span>&nbsp;View on Google Play</a>
-    <button [hidden]="mode === 'read' || mode === 'watch'" ion-button outline color="secondary" block (click)="bookmark()"><span><ion-icon name="bookmark"></ion-icon></span>&nbsp;Mark as Read</button>
-    <button [hidden]="mode === 'read' || mode === 'search'" ion-button outline color="secondary" block (click)="moveFromWatched(true)"><span><ion-icon name="bookmark"></ion-icon></span>&nbsp;Mark as Read</button>
-    <button [hidden]="mode === 'watch' || mode === 'read'" ion-button outline color="dark" block (click)="watch()"><span><ion-icon name="star"></ion-icon></span>&nbsp;Add to Watch List</button>
-    <button [hidden]="mode === 'search' || mode === 'read'" ion-button outline color="danger" block (click)="removeFromWatched()"><span><ion-icon name="trash"></ion-icon></span>&nbsp;Remove from Watch List</button>
-    <button [hidden]="mode === 'search' || mode === 'watch'" ion-button outline color="danger" block (click)="removeFromRead()"><span><ion-icon name="trash"></ion-icon></span>&nbsp;Remove from Already Read</button>
+    <button [hidden]="mode === 'home'" ion-button outline color="secondary" block (click)="databaseSaveProduct()"><span><ion-icon name="star"></ion-icon></span>&nbsp;Favourite</button>
+    <button [hidden]="mode === 'search'" ion-button outline color="danger" block (click)="databaseDeleteProduct()"><span><ion-icon name="trash"></ion-icon></span>&nbsp;Delete from Favourites</button>
   </ion-item>
 
 

@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   private viewProductInfo(selectedProduct: any){
-    this.navCtrl.push(ProductPage, {product: {productInfo: selectedProduct}, mode: "read"});
+    this.navCtrl.push(ProductPage, {product: {productInfo: selectedProduct}, mode: "home"});
   }
 
   ionViewWillEnter(){
