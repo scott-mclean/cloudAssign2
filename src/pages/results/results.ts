@@ -14,14 +14,14 @@ import { ProductPage } from "../product/product";
 })
 export class ResultsPage {
 
-  searchResults: Array<any>;
+  searchResults: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.searchResults = this.navParams.get('items');
   }
 
   private viewProductInfo(product: any){
-    this.navCtrl.push(ProductPage, {product: product, mode: "search"});
+    this.navCtrl.push(ProductPage, { product: product, mode: "search"});
   }
 
 }

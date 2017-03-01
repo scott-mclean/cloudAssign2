@@ -9,14 +9,14 @@
   <ion-navbar>
     <ion-title>Results</ion-title>
     <ion-buttons end>
-      <button ion-button>
+      <button ion-button (click)="decreasePage()">
         <span>
-          <ion-icon name="arrow-dropleft" (click)="decreasePage()"></ion-icon>
+          <ion-icon name="arrow-dropleft"></ion-icon>
           </span>
         </button>
-        <button ion-button>
+        <button ion-button (click)="increasePage()">
           <span>
-            <ion-icon name="arrow-dropright" (click)="increasePage()"></ion-icon>
+            <ion-icon name="arrow-dropright" ></ion-icon>
           </span>
         </button>
 </ion-buttons>
