@@ -14,10 +14,12 @@ import { ProductPage } from "../product/product";
 })
 export class ResultsPage {
 
-  searchResults: any;
+  searchResults: any = {};
+  displayResults: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.searchResults = this.navParams.get('items');
+    this.searchResults = this.navParams.get('result');
+    console.log(this.searchResults);
   }
 
   private viewProductInfo(product: any){
