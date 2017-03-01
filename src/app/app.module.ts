@@ -34,6 +34,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     HomePage,
     TabsPage,
     LoginPage,
+    ProductPage,
     RegisterPage,
     ResultsPage
   ],

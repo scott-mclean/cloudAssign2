@@ -1,6 +1,7 @@
 import { Component} from "@angular/core";
 import { NavController, NavParams, AlertController } from "ionic-angular";
 import { DataService } from "../../providers/data-service";
+import { ResultsPage } from "../results/results";
 
 /*
  Generated class for the BookInfo page.
@@ -18,10 +19,10 @@ export class ProductPage {
   mode: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private database: DataService, private alertCtrl: AlertController) {
-    this.productObject = this.navParams.get('product').volumeInfo;
+    this.productObject = this.navParams.get('product').name;
     this.mode = this.navParams.get('mode');
     console.log(this.productObject);
-    console.log("Mode:", this.mode);
+    console.log("Mode: ", this.mode);
   }
 
   databaseSaveProduct() {
