@@ -15,9 +15,9 @@
 
 <ion-content padding>
   <div text-center="">
-    <ion-img src={{productObject.image_url}}></ion-img>
+    <ion-img width="200" height="400" src={{productObject.image_url}}></ion-img>
   </div><br>
-  <ion-title text-center="">{{[productObject].name}}</ion-title>
+  <ion-title text-center="">{{productObject.name}}</ion-title>
   <!--
   <ion-item><span style="font-weight: bold">Author(s):</span> <span *ngFor="let author of bookObj.authors; let last = last">{{author}}{{last ? '' : ', '}}</span></ion-item>
   <ion-item><span style="font-weight: bold">Publisher: </span>{{bookObj.publisher}}</ion-item>
@@ -25,13 +25,10 @@
   <ion-item text-wrap><span style="font-weight: bold">Synopsis: </span>{{bookObj.description}}</ion-item>
   <ion-item><span style="font-weight: bold">ISBN-13: </span>{{bookObj.industryIdentifiers[0].identifier}}</ion-item>
   <ion-item><span style="font-weight: bold">ISBN-10: </span>{{bookObj.industryIdentifiers[1].identifier}}</ion-item>
--->
+  -->
   <ion-item>
     <button [hidden]="mode === 'home'" ion-button outline color="secondary" block (click)="databaseSaveProduct()"><span><ion-icon name="star"></ion-icon></span>&nbsp;Favourite</button>
     <button [hidden]="mode === 'search'" ion-button outline color="danger" block (click)="databaseDeleteProduct()"><span><ion-icon name="trash"></ion-icon></span>&nbsp;Delete from Favourites</button>
   </ion-item>
-
-
-
 
 </ion-content>

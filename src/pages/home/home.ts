@@ -4,6 +4,7 @@ import { NavController, ModalController, AlertController } from 'ionic-angular';
 import { LoginPage } from "../login/login";
 import { DataService } from "../../providers/data-service";
 import { ProductPage } from "../product/product";
+import { ResultsPage } from "../results/results";
 
 @Component({
   selector: 'page-home',

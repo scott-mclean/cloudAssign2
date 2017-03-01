@@ -16,6 +16,6 @@
     Products you have saved:
   </ion-list>
   <ion-list [hidden]="productList === undefined">
-    <button ion-item menuClose *ngFor="let key of keys" (click)="viewProductList(productList[key])"><span style="font-style: italic; font-weight: bold">{{productList[key].product}}</span>
-      <span [hidden]="!productList[key].products">by</span> <span *ngFor="let product of productList[key].product; let last = last">{{product}}{{last ? '' : ', '}}</span></button>
+    <button ion-item menuClose *ngFor="let key of keys" (click)="viewProductInfo(productList[key])"><span style="font-style: italic; font-weight: bold">{{productList[key].product}}</span>
+      <span [hidden]="!productList[key].products">by</span> <span *ngFor="let product of productList[key].product; let last = last">{{product.name}}{{last ? '' : ', '}}</span></button>
   </ion-list>
