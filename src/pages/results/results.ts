@@ -14,8 +14,7 @@ import { ProductPage } from "../product/product";
 })
 export class ResultsPage {
 
-  searchResults: any = {};
-  displayResults: any = {};
+  searchResults: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.searchResults = this.navParams.get('result');
