@@ -19,6 +19,7 @@ export class SearchPage {
   // TODO: Remeber to change the port number as necessary.
   site : string = 'http://localhost:8100/api';
   product : string = "";
+  query : string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams, private jsonp: Jsonp, private http: Http) {
 
   }
@@ -28,10 +29,11 @@ export class SearchPage {
     let siteSearch = this.site;
     let params = new URLSearchParams();
     params.append('access_key', this.apiKey);
-    params.append('name', this.product);
-    params.set('action', 'opensearch');
-    params.set('format', 'json');
-    params.set('callback', 'JSONP_CALLBACK');
+    this.query = this.product.split(' ').join('+');
+    params.append('q', this.query);
+    //params.set('action', 'opensearch');
+    //params.set('format', 'json');
+    //params.set('callback', 'JSONP_CALLBACK');
     console.log(params.toString());
     this.http.get(siteSearch, { search : params }).map(res => res.json())
     .subscribe(
