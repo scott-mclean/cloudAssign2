@@ -44,7 +44,7 @@ export class SearchPage {
       reply => {
         console.log(reply);
         this.reply = reply;
-        this.navCtrl.push(ResultsPage, reply)
+        this.navCtrl.push(ResultsPage, {result: reply.result, query: this.product})
       },
       error => console.warn("Error: ", error)
     )
