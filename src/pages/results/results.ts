@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProductPage } from "../product/product";
+import { SearchPage } from "../search/search";
 
 /*
   Generated class for the SearchResults page.
@@ -23,6 +24,18 @@ export class ResultsPage {
 
   private viewProductInfo(product: any){
     this.navCtrl.push(ProductPage, { product: product, mode: "search"});
+  }
+
+  private increasePage() {
+    SearchPage.pageNum++;
+    SearchPage.searchProductByName();
+  }
+
+  private decreasePage() {
+    if (SearchPage.pageNum > 1) {
+      SearchPage.pageNum--;
+      SearchPage.searchProductByName();
+    }
   }
 
 }

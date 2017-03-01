@@ -55,8 +55,6 @@ export class HomePage {
         this.productList = null;
         this.keys = null;
       }
-      console.log('Home - Keys');
-      console.log(this.keys);
     });
   }
 
