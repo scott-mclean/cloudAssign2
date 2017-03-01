@@ -27,7 +27,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item menuClose *ngFor="let result of searchResults" (click)="viewProductInfo(result)"><span style="font-style: italic; font-weight: bold">{{result}}</span></button>
+    <button ion-item menuClose *ngFor="let result of searchResults" (click)="viewProductInfo(result)"><span style="font-style: italic; font-weight: bold">{{result.name}}<ion-img style="width: 80px; height: 80px;" src={{result.image_thumb_url}}></ion-img></span></button>
   </ion-list>
 
 </ion-content>
