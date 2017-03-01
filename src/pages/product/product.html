@@ -12,20 +12,34 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <div text-center="">
-    <ion-img width="800" height="800" src={{productObject.image_url}}></ion-img>
-  </div><br>
+    <ion-img width="600" height="800" src={{productObject.image_url}}></ion-img>
+  </div><br><br>
   <ion-title text-center="">{{productObject.name}}</ion-title>
-  <!--
-  <ion-item><span style="font-weight: bold">Author(s):</span> <span *ngFor="let author of bookObj.authors; let last = last">{{author}}{{last ? '' : ', '}}</span></ion-item>
-  <ion-item><span style="font-weight: bold">Publisher: </span>{{bookObj.publisher}}</ion-item>
-  <ion-item><span style="font-weight: bold">Publication Date: </span>{{bookObj.publishedDate}}</ion-item>
-  <ion-item text-wrap><span style="font-weight: bold">Synopsis: </span>{{bookObj.description}}</ion-item>
-  <ion-item><span style="font-weight: bold">ISBN-13: </span>{{bookObj.industryIdentifiers[0].identifier}}</ion-item>
-  <ion-item><span style="font-weight: bold">ISBN-10: </span>{{bookObj.industryIdentifiers[1].identifier}}</ion-item>
-  -->
+
+  <ion-item><span style="font-weight: bold">Type: </span>{{productObject.primary_category}} - {{productObject.secondary_category}}</ion-item>
+
+  <ion-item><span style="font-weight: bold">Alcohol Content: </span>{{productObject.alcohol_content / 100}}%</ion-item>
+
+  <ion-item><span style="font-weight: bold">Package: </span>{{productObject.package}}</ion-item>
+
+  <ion-item hidden="!productObject.has_clearance_sale"><span style="font-weight: bold">On Clearance: </span>{{productObject.has_clearance_sale}}</ion-item>
+
+  <ion-item hidden="!productObject.has_limited_time_offer"><span style="font-weight: bold">Limited Offer: </span>{{productObject.has_limited_time_offer}}</ion-item>
+
+  <ion-item hidden="!productObject.has_value_added_promotion"><span style="font-weight: bold">On Promotion: </span>{{productObject.has_value_added_promotion}}</ion-item>
+
+  <ion-item><span style="font-weight: bold">Price: </span>\${{productObject.regular_price_in_cents / 100}}</ion-item>
+
+  <ion-item hidden="!productObject.sugar_content"><span style="font-weight: bold">Contains Sugar: </span>{{productObject.sugar_content}}</ion-item>
+
+  <ion-item hidden="!productObject.tasting_note"><span style="font-weight: bold">Tasting Note:</span>{{productObject.tasting_note}}</ion-item>
+
+  <ion-item><span style="font-weight: bold">Units: </span>{{productObject.total_package_units}}</ion-item>
+
+  <ion-item hidden="!productObject.serving_suggestion"><span style="font-weight: bold">Serving:  </span>{{productObject.serving_suggestion}}</ion-item>
+
   <ion-item>
     <button [hidden]="mode === 'home'" ion-button outline color="secondary" block (click)="databaseSaveProduct()"><span><ion-icon name="star"></ion-icon></span>&nbsp;Favourite</button>
     <button [hidden]="mode === 'search'" ion-button outline color="danger" block (click)="databaseDeleteProduct()"><span><ion-icon name="trash"></ion-icon></span>&nbsp;Delete from Favourites</button>

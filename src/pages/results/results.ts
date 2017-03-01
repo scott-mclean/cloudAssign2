@@ -25,7 +25,7 @@ export class ResultsPage {
   private viewProductInfo(product: any){
     this.navCtrl.push(ProductPage, { product: product, mode: "search"});
   }
-
+/*
   private increasePage() {
     SearchPage.pageNum++;
     SearchPage.searchProductByName();
@@ -37,5 +37,5 @@ export class ResultsPage {
       SearchPage.searchProductByName();
     }
   }
-
+*/
 }
